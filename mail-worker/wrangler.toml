@@ -20,4 +20,4 @@ bucket_name = "cloud-mail"
 orm_log = false
 domain = ["lfxas.qzz.io"]
 admin = "admin@lfxas.qzz.io"
-jwt_secret = "K8mP3xR7vQ2wL9nF4yT6hB1jD5sN0aZ8"
+jwt_secret = "6l6j436l48k48346e572q1421b3y3m30"
