@@ -1,39 +1,23 @@
 name = "cloud-mail"
 main = "src/index.js"
-compatibility_date = "2025-06-04"
-keep_vars = true
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
 
-[observability]
-enabled = true
+[[d1_databases]]
+binding = "db"
+database_name = "cloud-mail-db"
+database_id = "e1bf3a83-ed5b-4a60-8289-884fc30ac139"
 
-#[[d1_databases]]
-#binding = "db"			#d1数据库绑定名默认不可修改
-#database_name = ""		#d1数据库名字
-#database_id = ""		#d1数据库id
+[[kv_namespaces]]
+binding = "kv"
+id = "8c1040b6a184439f8dff05458f1c5532"
 
-#[[kv_namespaces]]
-#binding = "kv"			#kv绑定名默认不可修改
-#id = ""					#kv数据库id
+[[r2_buckets]]
+binding = "r2"
+bucket_name = "cloud-mail"
 
-#[[r2_buckets]]
-#binding = "r2"			#r2对象存储绑定名默认不可修改
-#bucket_name = ""		#r2对象存储桶的名字
-
-[assets]
-binding = "assets"		#静态资源绑定名默认不可修改
-directory = "./dist"	#前端vue项目打包的静态资源存放位置,默认dist
-not_found_handling = "single-page-application"
-run_worker_first = true
-
-[triggers]
-crons = ["0 16 * * *"]	#定时任务每天晚上12点执行
-
-
-#[vars]
-#orm_log = false
-#domain = []				#邮件域名可可配置多个 示例: ["example1.com","example2.com"]
-#admin = ""				#管理员的邮箱	示例: admin@example.com
-#jwt_secret = ""			#jwt令牌的密钥,随便填一串字符串
-
-[build]
-command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
+[vars]
+orm_log = false
+domain = ["lfxas.qzz.io"]
+admin = "admin@lfxas.qzz.io"
+jwt_secret = "K8mP3xR7vQ2wL9nF4yT6hB1jD5sN0aZ8"
