@@ -1,7 +1,11 @@
 name = "cloud-mail"
 main = "src/index.js"
-compatibility_date = "2025-01-01"
+compatibility_date = "2025-06-04"
 compatibility_flags = ["nodejs_compat"]
+keep_vars = true
+
+[observability]
+enabled = true
 
 [[d1_databases]]
 binding = "db"
@@ -16,8 +20,20 @@ id = "8c1040b6a184439f8dff05458f1c5532"
 binding = "r2"
 bucket_name = "cloud-mail"
 
+[assets]
+binding = "assets"
+directory = "./dist"
+not_found_handling = "single-page-application"
+run_worker_first = true
+
+[triggers]
+crons = ["0 16 * * *"]
+
 [vars]
 orm_log = false
 domain = ["lfxas.qzz.io"]
 admin = "admin@lfxas.qzz.io"
 jwt_secret = "6l6j436l48k48346e572q1421b3y3m30"
+
+[build]
+command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
