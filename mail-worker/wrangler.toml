@@ -31,8 +31,8 @@ crons = ["0 16 * * *"]
 
 [vars]
 orm_log = false
-domain = ["lfxas.qzz.io"]
-admin = "admin@lfxas.qzz.io"
+domain = ["lfxas.qzz.io", "lfxas.ccwu.cc"]
+admin = "admin@lfxas.ccwu.cc"
 jwt_secret = "6l6j436l48k48346e572q1421b3y3m30"
 
 [build]
